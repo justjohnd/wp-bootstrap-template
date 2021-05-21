@@ -30,33 +30,9 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-	<!-- If using a Sticky mobile footer, move the footer items into the nav menu, as they will not be accessable on a mobile phone -->
-	<!-- <li class="nav-item d-md-none">
-		<a class="nav-link text-white" href="#">Privacy Policy</a>
-	</li>
-	<li class="nav-item dropdown">
-		<a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-			aria-haspopup="true" aria-expanded="false">
-			Dropdown
-		</a>
-		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			<a class="dropdown-item" href="#">Action</a>
-			<a class="dropdown-item" href="#">Another action</a>
-			<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="#">Something else here</a>
-		</div>
-	</li>
-	</ul>
-
-	</div>  -->
-
-
-
-
-
-	<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-dark" role="navigation">
-		<!-- Change to bg-transparent fixed-top once banner-carousel is set up -->
+	<nav id="nav" class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top" role="navigation">
+		<!-- For transparent backgrounds: bg-transparent fixed-top -->
+		<!-- Remove bg-transparent fixed-top and add bg-dark for solid backgrou	nd -->
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<a class="navbar-brand" href="

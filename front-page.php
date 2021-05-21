@@ -13,12 +13,12 @@
 get_header();
 ?>
 
-<!-- <main id="primary" class="site-main"> -->
-<?php get_template_part('template-parts/banner_carousel'); ?>
+<main id="primary" class="site-main">
+  <?php get_template_part('template-parts/banner_carousel'); ?>
 
-<p>front-page</p>
+  <?php get_template_part('template-parts/grid_7'); ?>
 
-<!-- </main>#main -->
+</main>
 
 <?php
 // get_sidebar();
