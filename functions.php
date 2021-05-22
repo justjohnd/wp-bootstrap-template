@@ -144,7 +144,8 @@ add_action('widgets_init', 'bootstrap_theme_widgets_init');
  */
 function bootstrap_theme_scripts()
 {
-	wp_enqueue_style('bootstrap-theme-style', get_stylesheet_uri(), [], _S_VERSION);
+	wp_enqueue_style('bootstrap-theme-stylesheet', get_template_directory_uri() . '/dist/css/style.css', [], '1.0.0', 'all');
+
 	wp_style_add_data('bootstrap-theme-style', 'rtl', 'replace');
 
 	wp_enqueue_script('bootstrap-theme-navigation', get_template_directory_uri() . '/src/js/navigation.js', [], _S_VERSION, true);
