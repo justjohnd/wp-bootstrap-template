@@ -1,4 +1,3 @@
-import { src, dest } from 'gulp';
 import yargs from 'yargs';
 import sass from 'gulp-sass';
 import cleanCss from 'gulp-clean-css';
@@ -6,6 +5,7 @@ import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
+import { src, dest, watch } from 'gulp';
 const PRODUCTION = yargs.argv.prod;
 
 export const style = () => {
@@ -16,4 +16,8 @@ export const style = () => {
     .pipe(gulpif(PRODUCTION, cleanCss({ compatibility: 'ie8' })))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
     .pipe(dest('dist/css'));
+};
+
+export const watchScss = () => {
+  watch('src/sass/**/*.scss', style);
 };
