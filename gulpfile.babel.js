@@ -6,8 +6,10 @@ import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import { src, dest, watch } from 'gulp';
+import imagemin from 'gulp-imagemin';
 const PRODUCTION = yargs.argv.prod;
 
+// Compile css
 export const style = () => {
   return src('src/sass/style.scss')
     .pipe(gulpif(!PRODUCTION, sourcemaps.init()))
@@ -18,6 +20,15 @@ export const style = () => {
     .pipe(dest('dist/css'));
 };
 
-export const watchScss = () => {
+//Optimize Images
+export const images = () => {
+  return src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
+    .pipe(gulpif(PRODUCTION, imagemin()))
+    .pipe(dest('dist/images'));
+};
+
+//Watch for changes
+export const watchAll = () => {
   watch('src/sass/**/*.scss', style);
+  watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', images);
 };
