@@ -19,7 +19,7 @@
 ?>
 
 <!-- BS Grid: 7 cells-->
-<div class="container">
+<div id="js-navbar" class="container">
   <div class="row mb-4">
     <div class="col-md-8 mb-4 mb-md-0 px-2">
       <div class="border h-100">

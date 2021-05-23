@@ -8,6 +8,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import autoprefixer from 'autoprefixer';
 import imagemin from 'gulp-imagemin';
 import del from 'del';
+import webpack from 'webpack-stream';
 const PRODUCTION = yargs.argv.prod;
 
 // Compile css
@@ -21,14 +22,13 @@ export const style = () => {
     .pipe(dest('dist/css'));
 };
 
-//Optimize img
-export const img = () => {
+//Optimize Images
+export const images = () => {
   return src('src/img/**/*.{jpg,jpeg,png,svg,gif}')
     .pipe(gulpif(PRODUCTION, imagemin()))
-    .pipe(dest('dist/img'));
+    .pipe(dest('dist/images'));
 };
 
-// Copy files from src not included in any directories to dist
 export const copy = () => {
   return src([
     'src/**/*',
@@ -37,17 +37,44 @@ export const copy = () => {
   ]).pipe(dest('dist'));
 };
 
-// Delete dist on build
+// Delete dist on each reload
 export const clean = () => del(['dist']);
 
-// Set dev and build tasks
-export const dev = series(clean, parallel(style, img, copy), watchAll);
-export const build = series(clean, parallel(style, img, copy));
+//Set up dev and build operations
+export const dev = () => series(clean, parallel(style, images, copy), watchAll);
+export const build = () => series(clean, parallel(style, images, copy));
 export default dev;
+
+export const scripts = () => {
+  return src('src/js/index.js')
+    .pipe(
+      webpack({
+        module: {
+          rules: [
+            {
+              test: /\.js$/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [],
+                },
+              },
+            },
+          ],
+        },
+        mode: PRODUCTION ? 'production' : 'development',
+        devtool: !PRODUCTION ? 'inline-source-map' : false,
+        output: {
+          filename: 'index.js',
+        },
+      })
+    )
+    .pipe(dest('dist/js'));
+};
 
 //Watch for changes
 export const watchAll = () => {
   watch('src/sass/**/*.scss', style);
-  watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', img);
+  watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', images);
   watch(['src/**/*', '!src/{img,js,sass}', '!src/{img,js,sass}/**/*'], copy);
 };
