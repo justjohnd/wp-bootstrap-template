@@ -148,7 +148,9 @@ function bootstrap_theme_scripts()
 
 	wp_style_add_data('bootstrap-theme-style', 'rtl', 'replace');
 
-	// wp_enqueue_script('bootstrap-theme-navigation', get_template_directory_uri() . '/dist/js/navigation.js', [], _S_VERSION, true);
+	wp_enqueue_script('bootstrap-theme-navigation', get_template_directory_uri() . '/dist/js/navigation.js', [], _S_VERSION, true);
+
+	wp_enqueue_script('bootstrap-theme-bs-scripts', get_template_directory_uri() . '/dist/js/index.js', ['bootstrap'], '1.0.0', true);
 
 	wp_enqueue_script('bootstrap-theme-index', get_template_directory_uri() . '/dist/js/index.js', [], _S_VERSION, true);
 

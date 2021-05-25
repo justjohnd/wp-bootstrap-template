@@ -9,6 +9,12 @@ import autoprefixer from 'autoprefixer';
 import imagemin from 'gulp-imagemin';
 import del from 'del';
 import webpack from 'webpack-stream';
+import named from 'vinyl-named';
+import browserSync from 'browser-sync';
+import zip from 'gulp-zip';
+import replace from 'gulp-replace';
+import wpPot from 'gulp-wp-pot';
+import info from './package.json';
 const PRODUCTION = yargs.argv.prod;
 
 // Compile css
@@ -19,7 +25,8 @@ export const style = () => {
     .pipe(gulpif(PRODUCTION, postcss([autoprefixer])))
     .pipe(gulpif(PRODUCTION, cleanCss({ compatibility: 'ie8' })))
     .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
-    .pipe(dest('dist/css'));
+    .pipe(dest('dist/css'))
+    .pipe(server.stream());
 };
 
 //Optimize Images
@@ -40,13 +47,9 @@ export const copy = () => {
 // Delete dist on each reload
 export const clean = () => del(['dist']);
 
-//Set up dev and build operations
-export const dev = () => series(clean, parallel(style, images, copy), watchAll);
-export const build = () => series(clean, parallel(style, images, copy));
-export default dev;
-
 export const scripts = () => {
-  return src('src/js/index.js')
+  return src(['src/js/index.js', 'src/js/navigation.js'])
+    .pipe(named())
     .pipe(
       webpack({
         module: {
@@ -56,7 +59,7 @@ export const scripts = () => {
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: [],
+                  presets: ['@babel/preset-env'],
                 },
               },
             },
@@ -65,16 +68,87 @@ export const scripts = () => {
         mode: PRODUCTION ? 'production' : 'development',
         devtool: !PRODUCTION ? 'inline-source-map' : false,
         output: {
-          filename: 'index.js',
+          filename: '[name].js',
+        },
+        externals: {
+          bootstrap: 'bootstrap',
         },
       })
     )
     .pipe(dest('dist/js'));
 };
 
+// Browsersync
+const server = browserSync.create();
+export const serve = (done) => {
+  server.init({
+    proxy: 'http://localhost/bootstrap-theme',
+  });
+  done();
+};
+export const reload = (done) => {
+  server.reload();
+  done();
+};
+
+//Compress for zip file
+export const compress = () => {
+  return src([
+    '**/*',
+    '!node_modules{,/**}',
+    '!bundled{,/**}',
+    '!src{,/**}',
+    '!.babelrc',
+    '!.gitignore',
+    '!gulpfile.babel.js',
+    '!package.json',
+    '!package-lock.json',
+  ])
+    .pipe(
+      gulpif(
+        (file) => file.relative.split('.').pop() !== 'zip',
+        replace('_themename', info.name)
+      )
+    )
+    .pipe(zip(`${info.name}.zip`))
+    .pipe(dest('bundled'));
+};
+
+//Translations
+export const pot = () => {
+  return src('**/*.php')
+    .pipe(
+      wpPot({
+        domain: '_themename',
+        package: info.name,
+      })
+    )
+    .pipe(dest(`languages/${info.name}.pot`));
+};
+
 //Watch for changes
 export const watchAll = () => {
   watch('src/sass/**/*.scss', style);
-  watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', images);
-  watch(['src/**/*', '!src/{img,js,sass}', '!src/{img,js,sass}/**/*'], copy);
+  watch('src/img/**/*.{jpg,jpeg,png,svg,gif}', series(images, reload));
+  watch(
+    ['src/**/*', '!src/{img,js,sass}', '!src/{img,js,sass}/**/*'],
+    series(copy, reload)
+  );
+  watch('src/js/**/*.js', series(scripts, reload));
+  watch('**/*.php', reload);
 };
+
+//Set up dev and build commands. Note that all tasks must be registered BEFORE this code, therefore this code needs to come at the end of the file
+export const dev = series(
+  clean,
+  parallel(style, images, copy, scripts),
+  serve,
+  watchAll
+);
+export const build = series(
+  clean,
+  parallel(style, images, copy, scripts),
+  pot,
+  compress
+);
+export default dev;
