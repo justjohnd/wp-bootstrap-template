@@ -20,3 +20,9 @@ $theme-colors: (
   // 'dark': $dark,
   'custom': rgb(85, 167, 37)
 );
+
+@media screen and (max-width: 576px) {
+  .multi-image-carousel-mobile-container {
+    @include make-container($padding-x: 0);
+  }
+}

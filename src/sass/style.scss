@@ -150,10 +150,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights
 .carousel-item img {
-  height: 100%;
   width: 100%;
   object-fit: cover;
   width: auto;
+  max-height: 100%;
 }
 
 @media screen and (min-width: 576px) {
@@ -179,4 +179,9 @@ ul {
   height: 200px;
   background-color: $primary;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+
+a.carousel-control-next {
+  margin: 0;
+  padding: 0;
 }
