@@ -27,13 +27,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item img-darken active">
-      <?php acf_image($template_name . '_image1', 'img-slider') ?>
+      <?php acf_image('image-1', 'img-slider') ?>
     </div>
     <div class="carousel-item img-darken">
-      <?php acf_image($template_name . '_image2', 'img-slider') ?>
+      <?php acf_image('image-2', 'img-slider') ?>
     </div>
     <div class="carousel-item img-darken">
-      <?php acf_image($template_name . '_image3', 'img-slider') ?>
+      <?php acf_image('image-3', 'img-slider') ?>
     </div>
     <div class="img-text">
       <h1 class="h1 text-center text-light fade-in">PAGE HEADING</h1>
