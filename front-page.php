@@ -18,6 +18,8 @@ get_header();
 
   <?php get_template_part('template-parts/grid_7'); ?>
 
+  <?php get_template_part('template-parts/gallery-modal'); ?>
+
 </main>
 
 <?php
