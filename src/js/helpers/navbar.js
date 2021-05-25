@@ -12,3 +12,5 @@ const waypoint = new Waypoint({
     }
   },
 });
+
+console.log('this is navbar.js');

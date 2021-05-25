@@ -111,9 +111,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'components/image';
 @import 'components/gallery-modal';
 @import 'components/navbar';
+@import 'woocommerce';
 
 // //Declare any bootstrap SCSS variables prior to importing the file
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 //Boostrap modifications
 
