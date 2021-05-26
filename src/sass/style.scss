@@ -181,7 +181,11 @@ ul {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
-a.carousel-control-next {
-  margin: 0;
-  padding: 0;
+//Fontawesome
+.fab {
+  color: $primary;
+}
+
+.fab:hover {
+  color: $secondary;
 }
