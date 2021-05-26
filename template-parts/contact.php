@@ -16,5 +16,8 @@
   <h2 class="h2 text-center">CONTACT US</h2>
   <form>
     <?php echo do_shortcode(wp_kses_post('[contact-form-7 id="70" title="Email"]')) ?>
+    This site is protected by reCAPTCHA and the Google
+    <a href="https://policies.google.com/privacy">Privacy Policy</a> and
+    <a href="https://policies.google.com/terms">Terms of Service</a> apply.
   </form>
 </section>

@@ -116,8 +116,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // //Declare any bootstrap SCSS variables prior to importing the file
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
-//Boostrap modifications
+//Wordpress modifications
+.page {
+  margin: 0;
+}
 
+//Boostrap modifications
 .btn {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -208,4 +212,9 @@ input[type='submit'] {
   color: $white;
   line-height: 1.5; //hardcoded from .btn class
   padding: 0.375rem 0.75rem; //hardcoded from .btn class
+}
+
+//Remve captcha badge
+.grecaptcha-badge {
+  visibility: hidden;
 }
