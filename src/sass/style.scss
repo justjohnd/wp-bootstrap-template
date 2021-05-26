@@ -189,3 +189,23 @@ ul {
 .fab:hover {
   color: $secondary;
 }
+
+//Contact Form 7
+.wpcf7-form-control-wrap {
+  display: block;
+  margin-top: 0.5em;
+}
+
+.wpcf7 label {
+  width: 100%;
+}
+
+input[type='submit'] {
+  border: none;
+  border-color: none;
+  border-radius: 0.25rem; //hardcoded but same as .btn class
+  background: $primary;
+  color: $white;
+  line-height: 1.5; //hardcoded from .btn class
+  padding: 0.375rem 0.75rem; //hardcoded from .btn class
+}
