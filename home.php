@@ -12,7 +12,7 @@
  * @package Bootstrap_Theme
  */
 
-get_header('solid');
+get_header('sidebar');
 ?>
 <main id="primary" class="site-main">
 
@@ -55,4 +55,4 @@ get_header('solid');
 
 <?php
 get_sidebar();
-get_footer('solid');
+get_footer('sidebar');

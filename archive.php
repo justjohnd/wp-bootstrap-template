@@ -7,7 +7,7 @@
  * @package Bootstrap_Theme
  */
 
-get_header('solid');
+get_header('sidebar');
 
 $description = get_the_archive_description();
 ?>
@@ -35,4 +35,4 @@ $description = get_the_archive_description();
 
 <?php
 get_sidebar('sidebar-1');
-get_footer('solid');
+get_footer('sidebar');
