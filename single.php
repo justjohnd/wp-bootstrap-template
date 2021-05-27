@@ -36,5 +36,5 @@ get_header('solid');
 </main><!-- #main -->
 
 <?php
-get_sidebar('sidebar-1');
+get_sidebar();
 get_footer('solid');
