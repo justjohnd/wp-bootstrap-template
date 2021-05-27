@@ -14,7 +14,7 @@ get_template_part('template-parts/head');
 
 <body <?php body_class(); ?>>
   <div class="site">
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-dark sticky-top site-header mb-4" role="navigation">
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-dark sticky-top site-header" role="navigation">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <a class="navbar-brand" href="

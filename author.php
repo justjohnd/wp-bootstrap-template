@@ -11,7 +11,7 @@ get_header('sidebar');
 // Set the Current Author Variable $current_author
 $current_author = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
 ?>
-<div class="main-content-holder">
+<div class="main-content-holder container">
   <div class="author-card-holder">
     <h2>About <?php echo $current_author->display_name; ?>
     </h2>

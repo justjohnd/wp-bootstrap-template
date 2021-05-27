@@ -1,0 +1,48 @@
+#qodef-page-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+aside {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 0 0px;
+  flex: 1 0 0;
+}
+.author-card-holder,
+.author-articles-holder {
+  text-align: center;
+}
+.author-card-holder {
+  background: #f6f7f2;
+  border: 1px solid #79a2ac;
+  padding: 20px;
+  color: #79a2ac;
+}
+.author-photo {
+  display: inline-block;
+  border-radius: 50px;
+}
+.author-photo img {
+  border-radius: 50px;
+}
+.articles-title {
+  margin: 45px 0;
+}
+.nav-links {
+  letter-spacing: 5px;
+  margin: 20px 0;
+}
+@media only screen and (min-width: 680px) {
+  .main-content-holder {
+    -webkit-box-flex: 2;
+    -ms-flex: 2 0 0px;
+    flex: 2 0 0;
+    margin: 0 1.5rem 0 0;
+  }
+}
