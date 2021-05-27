@@ -101,6 +101,8 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import 'utilities/alignments';
 
+@import 'layouts/content-sidebar';
+
 @import 'transitions/transitions-banner/banner';
 @import 'transitions/fade';
 @import 'transitions/scroll-up';
