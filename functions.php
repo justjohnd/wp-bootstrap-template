@@ -368,3 +368,23 @@ the_posts_navigation(
 		'screen_reader_text' => __('Posts navigation', 'bootstrap_them')
 	]
 );
+
+/**
+ * Generate custom search form. This is to be able to add classes to the search form
+ *
+ * @param string $form Form HTML.
+ * @return string Modified form HTML.
+ */
+function bootstrap_theme_search_form($form)
+{
+	$form = '<form role="search" method="get" id="searchform" class="searchform form-inline my-2 my-lg-0" action="' . home_url('/') . '" >
+    <div class="d-none d-lg-flex"><label class="screen-reader-text" for="s">' . __('Search for:') . '</label>
+    <input class="form-control mr-sm-2" placeholder="Search" type="search" aria-label="Search" value="' . get_search_query() . '" name="s" id="s" />
+		<button class="btn btn-outline-success my-2 my-sm-0 nav-link text-white" type="submit" id="searchsubmit" value="' . esc_attr__('Search') . '" >Search
+		</button>
+    </div>
+    </form>';
+
+	return $form;
+}
+add_filter('get_search_form', 'bootstrap_theme_search_form');

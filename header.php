@@ -50,12 +50,7 @@ get_template_part('template-parts/head');
 				</div>
 				<!-- Restyle buttons for mobile -->
 				<div class="search-button-left d-none d-lg-flex">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-						<button class="btn btn-outline-success my-2 my-sm-0 nav-link text-white" type="submit">
-							Search
-						</button>
-					</form>
+					<?php get_search_form(); ?>
 					<button class="btn btn-outline-primary my-2 my-sm-0 nav-link text-white">
 						OTHER BUTTON
 					</button>
