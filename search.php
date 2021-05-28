@@ -49,4 +49,4 @@ get_header('solid');
 </main><!-- #main -->
 
 <?php
-get_footer('solid');
+get_footer();

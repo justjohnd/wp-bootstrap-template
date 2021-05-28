@@ -9,22 +9,9 @@
 
 get_header('sidebar');
 ?>
-<main id="main" class="content-wrapper container">
-	<?php if (have_posts()) {
-	while (have_posts()) {
-		the_post(); ?>
 
-	<h1 class="page-title"><?php echo esc_html(get_the_title()); ?>
-	</h1>
-	<div class="page-section">
-		<div class="page-content">
-			<?php the_content(); ?>
-		</div>
-		<?php
-	}
-	wp_reset_postdata();
-} ?>
-	</div>
+<main id="main" class="content-wrapper container">
+
 	<?php $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $posts_query = new WP_Query(
 	[
@@ -34,6 +21,7 @@ $posts_query = new WP_Query(
 		'paged' => $paged
 	]
 ); ?>
+
 	<div class="posts-section">
 		<?php if ($posts_query->have_posts()) { ?>
 		<h2><?php echo esc_html__('Our latest work', 'textdomain'); ?>
@@ -82,4 +70,4 @@ wp_reset_postdata();
 </main>
 <?php
 get_sidebar();
-get_footer('sidebar');
+get_footer();

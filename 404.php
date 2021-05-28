@@ -40,4 +40,4 @@ the_widget(
 </main><!-- #main -->
 
 <?php
-get_footer('solid');
+get_footer();

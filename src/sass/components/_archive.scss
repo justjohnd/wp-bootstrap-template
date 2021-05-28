@@ -1,12 +1,3 @@
-.page-section {
-  display: grid;
-}
-@media only screen and (min-width: 1025px) {
-  .page-section {
-    grid-template-columns: auto 25%;
-    grid-gap: 2rem;
-  }
-}
 .page-content,
 .archive-sidebar {
   margin-bottom: 20px;

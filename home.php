@@ -50,4 +50,4 @@ get_header('sidebar');
 
 <?php
 get_sidebar();
-get_footer('sidebar');
+get_footer();
