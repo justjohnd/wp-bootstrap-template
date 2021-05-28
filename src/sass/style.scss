@@ -187,6 +187,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   }
 }
 
+//Jumbotron
+.jumbotron {
+  margin-bottom: 0;
+  max-height: 100%;
+}
+
 // General Element modifications
 body {
   font-size: 1rem;

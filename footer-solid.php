@@ -22,7 +22,7 @@
     </div>
 
     <div class="bg-dark d-none d-md-block">
-      <div class="container mb-0">
+      <div class="mb-0 px-3">
         <div class="row py-2">
           <div class="col-sm-12 col-md-8">
             <div class="row">
@@ -87,6 +87,7 @@
 </footer>
 
 <?php wp_footer(); ?>
+</div> <!-- .site -->
 </body>
 
 </html>
