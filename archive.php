@@ -7,9 +7,9 @@
  * @package Bootstrap_Theme
  */
 
-get_header('solid');
+get_header('sidebar');
 ?>
-<main id="main" class="content-wrapper">
+<main id="main" class="content-wrapper container">
 	<?php if (have_posts()) {
 	while (have_posts()) {
 		the_post(); ?>
@@ -24,37 +24,7 @@ get_header('solid');
 	}
 	wp_reset_postdata();
 } ?>
-		<div class="archive-sidebar">
-			<div class="archive-categories">
-				<p><strong><?php echo esc_html__('Categories', 'textdomain'); ?></strong>
-				</p>
-				<ul class="category-list">
-					<?php wp_list_categories(
-	[
-		'title_li' => '',
-		'hide_title_if_empty' => true
-	]
-); ?>
-				</ul>
-			</div>
-			<div class="archive-tags">
-				<p><strong><?php echo esc_html__('Tags', 'textdomain'); ?></strong>
-				</p>
-				<?php wp_tag_cloud(); ?>
-			</div>
-			<div class="archive-authors">
-				<p><strong><?php echo esc_html__('Authors', 'textdomain'); ?></strong>
-				</p>
-				<?php wp_list_authors(
-	[
-		'hide_empty' => 'true',
-		'optioncount' => 'true'
-	]
-); ?>
-			</div>
-		</div>
 	</div>
-
 	<?php $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 $posts_query = new WP_Query(
 	[
@@ -64,7 +34,6 @@ $posts_query = new WP_Query(
 		'paged' => $paged
 	]
 ); ?>
-
 	<div class="posts-section">
 		<?php if ($posts_query->have_posts()) { ?>
 		<h2><?php echo esc_html__('Our latest work', 'textdomain'); ?>
@@ -110,7 +79,7 @@ wp_reset_postdata();
 		</div>
 		<?php } ?>
 	</div>
-	<p>ARCHIVE PAGE</p>
 </main>
 <?php
-get_footer('solid');
+get_sidebar();
+get_footer('sidebar');

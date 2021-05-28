@@ -101,13 +101,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import 'utilities/alignments';
 
-@import 'layouts/content-sidebar';
+@import 'custom';
+
+//Declare any bootstrap SCSS variables prior to importing the file
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
 
 @import 'transitions/transitions-banner/banner';
 @import 'transitions/fade';
 @import 'transitions/scroll-up';
 
-@import 'custom';
 @import 'components/archive';
 @import 'components/author';
 @import 'components/carousel-banner';
@@ -117,12 +119,41 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'components/navbar';
 @import 'woocommerce';
 
-// //Declare any bootstrap SCSS variables prior to importing the file
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'layouts/content-sidebar';
 
-//Wordpress modifications
+//Wordpress class modifications
 .page {
   margin: 0;
+}
+
+//Note: this manually overrides the wordpress .cat-item class with properties equivalent to .btn .btn-primary from bootstrap. This class applies to categoriy items for the category section of a widget.
+.cat-item a {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: $white;
+  background-color: $primary;
+  border-color: $primary;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-decoration: none;
+}
+
+.cat-item a:hover {
+  text-decoration: none;
+  color: $white;
+  background-color: #0069d9;
+  border-color: #0062cc;
 }
 
 //Boostrap modifications

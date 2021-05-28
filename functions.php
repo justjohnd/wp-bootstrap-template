@@ -130,10 +130,10 @@ function bootstrap_theme_widgets_init()
 			'name' => esc_html__('Sidebar', 'bootstrap-theme'),
 			'id' => 'sidebar-1',
 			'description' => esc_html__('Add widgets here.', 'bootstrap-theme'),
-			'before_widget' => '<section id="%1$s" class="container widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget' => '</section>',
-			'before_title' => '<h2 class="widget-title">',
-			'after_title' => '</h2>',
+			'before_title' => '<p class="widget-title font-weight-bold">',
+			'after_title' => '</p>',
 		]
 	);
 }
