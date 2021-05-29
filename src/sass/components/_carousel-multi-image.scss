@@ -176,3 +176,18 @@
     visibility: visible;
   }
 }
+
+//Adjust for different image heights
+.multi-image.carousel-item img {
+  height: 40vh;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .multi-image.carousel-item img {
+    height: 30vh;
+    object-fit: cover;
+    width: 100%;
+  }
+}

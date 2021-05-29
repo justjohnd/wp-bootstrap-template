@@ -1,0 +1,47 @@
+.page-content,
+.archive-sidebar {
+  margin-bottom: 20px;
+}
+.archived-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1.2rem;
+}
+.post-title {
+  padding: 6px 0;
+}
+.archive-pagination {
+  position: relative;
+  text-align: center;
+  margin: 35px 0 0;
+}
+.page-numbers {
+  margin: 0 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  border-radius: 50%;
+  line-height: 32px;
+}
+.page-numbers.current {
+  background: #e82a2a;
+  padding: 0 9px;
+}
+ul.category-list li {
+  display: inline-block;
+}
+ul.category-list li,
+.archive-authors li {
+  list-style: none;
+}
+ul.category-list li a {
+  margin: 0 10px 5px 0;
+  float: left;
+  background: #eee;
+  color: #333;
+  padding: 5px 10px;
+}
+ul.category-list li a:hover {
+  background: #e82a2a;
+  color: #fff;
+}

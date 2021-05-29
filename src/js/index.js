@@ -1,10 +1,6 @@
 import ScrollOut from 'scroll-out';
 import '../../node_modules/waypoints/lib/jquery.waypoints.min.js';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
-import bootstrap from 'bootstrap';
+// import bootstrap from 'bootstrap';
 
 import './helpers/carousel-multi-image.js';
 import './helpers/waypointsFunctions.js';

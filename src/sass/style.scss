@@ -101,11 +101,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import 'utilities/alignments';
 
+@import 'custom';
+
+//Declare any bootstrap SCSS variables prior to importing the file
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
 @import 'transitions/transitions-banner/banner';
 @import 'transitions/fade';
 @import 'transitions/scroll-up';
 
-@import 'custom';
+@import 'components/archive';
+@import 'components/author';
 @import 'components/carousel-banner';
 @import 'components/carousel-multi-image';
 @import 'components/image';
@@ -113,11 +119,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import 'components/navbar';
 @import 'woocommerce';
 
-// //Declare any bootstrap SCSS variables prior to importing the file
-@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import 'layouts/content-sidebar';
+
+//Wordpress class modifications
+.page {
+  margin: 0;
+}
+
+//This class applies to categoriy items for the category section of a widget.
+.cat-item a {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.cat-item a:hover {
+  @extend .btn-primary:hover;
+}
+
+//Navigationals for pagination
+.nav-links {
+  letter-spacing: 0px;
+  @extend .container;
+}
+
+.post-navigation .nav-next {
+  text-align: unset;
+}
 
 //Boostrap modifications
-
 .btn {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -150,16 +179,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights
 .carousel-item img {
-  height: 100%;
   width: 100%;
   object-fit: cover;
   width: auto;
+  max-height: 100%;
 }
 
 @media screen and (min-width: 576px) {
   .carousel-item img {
     width: 100%;
   }
+}
+
+//Jumbotron
+.jumbotron {
+  margin-bottom: 0;
+  max-height: 100%;
 }
 
 // General Element modifications
@@ -179,4 +214,33 @@ ul {
   height: 200px;
   background-color: $primary;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+
+//Fontawesome
+.fab {
+  color: $primary;
+}
+
+.fab:hover {
+  color: $secondary;
+}
+
+//Contact Form 7
+.wpcf7-form-control-wrap {
+  display: block;
+  margin-top: 0.5em;
+}
+
+.wpcf7 label {
+  width: 100%;
+}
+
+input[type='submit'] {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+//Remve captcha badge
+.grecaptcha-badge {
+  visibility: hidden;
 }

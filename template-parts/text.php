@@ -1,3 +1,16 @@
+<?php
+/**
+ *
+ * This template adds an accordian section
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Bootstrap_Theme
+ */
+?>
+
+<?php get_template_part('template-parts/acf-variables'); ?>
+
 <!-- BS Text Section -->
 <div data-scroll class="container text-center">
   <div class="row justify-content-center">

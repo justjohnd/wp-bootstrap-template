@@ -1,11 +1,20 @@
+<?php
+/**
+ *
+ * This template adds a card section
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Bootstrap_Theme
+ */
+?>
+
+<?php get_template_part('template-parts/acf-variables'); ?>
+
 <!-- BS Card -->
 <div class="card">
-  <img
-    class="card-img-top"
-    src="https://source.unsplash.com/user/fabriziochiagano/400x300"
-    alt="Card
-      image cap"
-  />
+  <img class="card-img-top" src="https://source.unsplash.com/user/fabriziochiagano/400x300" alt="Card
+      image cap" />
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">
