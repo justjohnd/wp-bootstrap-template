@@ -60,27 +60,19 @@ endif;
           </div>
           <!-- Restyle buttons for mobile -->
           <div class="search-button-left d-none d-lg-flex">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-              <button class="btn btn-outline-success my-2 my-sm-0 nav-link text-white" type="submit">
-                Search
-              </button>
-            </form>
-            <button class="btn btn-outline-primary my-2 my-sm-0 nav-link text-white">
-              OTHER BUTTON
+            <?php get_search_form() ?>
+            <button
+              class="btn btn-outline-primary align-self-end nav-btn ml-3 my-2 my-sm-0 nav-link text-white text-nowrap">
+              <span><i class="fas fa-play mr-1"></i></span>
+              PLAY
             </button>
           </div>
-
           <div class="search-button-right d-block d-lg-none">
-            <button class="btn btn-outline-primary my-2 my-sm-0 nav-link text-white">
-              OTHER BUTTON
+            <button class="btn btn-outline-primary ml-0 my-2 my-sm-0 nav-link text-white">
+              <span><i class="fas fa-play"></i></span>
+              PLAY
             </button>
-            <form class="form-inline my-2 my-lg-0">
-              <button class="btn btn-outline-success my-2 my-sm-0 nav-link text-white" type="submit">
-                Search
-              </button>
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-            </form>
+            <?php get_search_form() ?>
           </div>
         </div>
       </div>
