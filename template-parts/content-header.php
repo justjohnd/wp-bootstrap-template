@@ -61,14 +61,14 @@ endif;
           <!-- Restyle buttons for mobile -->
           <div class="search-button-left d-none d-lg-flex">
             <?php get_search_form() ?>
-            <button class="btn btn-outline-primary nav-btn ml-3 my-2 my-sm-0 nav-link text-white text-nowrap">
+            <button
+              class="btn btn-outline-primary align-self-end nav-btn ml-3 my-2 my-sm-0 nav-link text-white text-nowrap">
               <span><i class="fas fa-play mr-1"></i></span>
               PLAY
             </button>
           </div>
-
           <div class="search-button-right d-block d-lg-none">
-            <button class="btn btn-outline-primary my-2 my-sm-0 nav-link text-white">
+            <button class="btn btn-outline-primary ml-0 my-2 my-sm-0 nav-link text-white">
               <span><i class="fas fa-play"></i></span>
               PLAY
             </button>

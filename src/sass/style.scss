@@ -199,9 +199,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 //Forms
 //Make input height same as button
 .form-outline .form-control {
-  height: unset;
   font-size: 0.75em;
   border-radius: unset;
+}
+
+@media screen and (min-width: 576px) {
+  .form-outline .form-control {
+    height: unset;
+  }
 }
 
 // General Element modifications
