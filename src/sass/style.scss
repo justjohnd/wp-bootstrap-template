@@ -146,69 +146,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   text-align: unset;
 }
 
-//Boostrap modifications
-//Buttons
-.btn {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.btn.rounded-right {
-  border-radius: 0;
-  @extend .rounded-right;
-}
-
-.container {
-  // Sets default y-axis margin for containers
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-//Navbar
-.navbar .container {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.nav-link {
-  padding: 0.25em 1em;
-}
-
-//These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights
-.carousel-item img {
-  width: 100%;
-  object-fit: cover;
-  width: auto;
-  max-height: 100%;
-}
-
-@media screen and (min-width: 576px) {
-  .carousel-item img {
-    width: 100%;
-  }
-}
-
-//Jumbotron
-.jumbotron {
-  margin-bottom: 0;
-  max-height: 100%;
-}
-
-//Forms
-//Make input height same as button
-.form-outline .form-control {
-  font-size: 0.75em;
-  border-radius: unset;
-}
-
-@media screen and (min-width: 576px) {
-  .form-outline .form-control {
-    height: unset;
-  }
-}
-
 // General Element modifications
 body {
   font-size: 1rem;
@@ -255,6 +192,12 @@ input[type='submit'] {
 //Remove captcha badge
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+//Navbar
+.custom-logo {
+  width: 248px;
+  height: 100%;
 }
 
 @import 'project';
