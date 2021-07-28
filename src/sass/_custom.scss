@@ -8,6 +8,8 @@ $h5-font-size: $font-size-base * 2.5;
 
 // Define color variables, then add them to the $theme-colors map; You can add custom colors as well
 $primary: #fe9100;
+$black: #000;
+
 
 $theme-colors: (
   // 'primary': $primary,
@@ -18,7 +20,7 @@ $theme-colors: (
   // 'danger': $danger,
   // 'light': $light,
   // 'dark': $dark,
-  'custom': rgb(85, 167, 37)
+  'black': $black
 );
 
 //CSS class modifications
@@ -49,6 +51,10 @@ $theme-colors: (
 
 .nav-link {
   padding: 0.25em 1em;
+}
+
+.navbar-collapse {
+  margin-top: 14px; //Only use this to manually vertically align navbar to the logo 
 }
 
 //These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights

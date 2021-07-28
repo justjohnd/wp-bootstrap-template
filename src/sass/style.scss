@@ -200,4 +200,89 @@ input[type='submit'] {
   height: 100%;
 }
 
+.nav-con {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-menu-wrapper {
+  display: none;
+  margin-top: 0; //Adjust to manualy vertically align to logo
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.hamburger {
+  border: 1px solid $primary;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  padding: 5px 5px 0 5px;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+.burger-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background-color: $primary;
+  transition: all 0.5s ease-out;
+}
+
+.toggle .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggle .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 0;
+  width: 100vw;
+  transition: all 0.5s ease-out;
+}
+
+.mobile-menu.toggle {
+  height: 500px;
+  transition: all 0.5s ease-out;
+}
+
+@keyframes navLinkDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
 @import 'project';
