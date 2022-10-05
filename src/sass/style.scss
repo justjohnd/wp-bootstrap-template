@@ -146,69 +146,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   text-align: unset;
 }
 
-//Boostrap modifications
-//Buttons
-.btn {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.btn.rounded-right {
-  border-radius: 0;
-  @extend .rounded-right;
-}
-
-.container {
-  // Sets default y-axis margin for containers
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-//Navbar
-.navbar .container {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.nav-link {
-  padding: 0.25em 1em;
-}
-
-//These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights
-.carousel-item img {
-  width: 100%;
-  object-fit: cover;
-  width: auto;
-  max-height: 100%;
-}
-
-@media screen and (min-width: 576px) {
-  .carousel-item img {
-    width: 100%;
-  }
-}
-
-//Jumbotron
-.jumbotron {
-  margin-bottom: 0;
-  max-height: 100%;
-}
-
-//Forms
-//Make input height same as button
-.form-outline .form-control {
-  font-size: 0.75em;
-  border-radius: unset;
-}
-
-@media screen and (min-width: 576px) {
-  .form-outline .form-control {
-    height: unset;
-  }
-}
-
 // General Element modifications
 body {
   font-size: 1rem;
@@ -255,6 +192,97 @@ input[type='submit'] {
 //Remove captcha badge
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+//Navbar
+.custom-logo {
+  width: 248px;
+  height: 100%;
+}
+
+.nav-con {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-menu-wrapper {
+  display: none;
+  margin-top: 0; //Adjust to manualy vertically align to logo
+}
+
+.nav-menu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.hamburger {
+  border: 1px solid $primary;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+  padding: 5px 5px 0 5px;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+.burger-line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background-color: $primary;
+  transition: all 0.5s ease-out;
+}
+
+.toggle .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.toggle .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.toggle .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 0;
+  width: 100vw;
+  transition: all 0.5s ease-out;
+}
+
+.mobile-menu.toggle {
+  height: 500px;
+  transition: all 0.5s ease-out;
+}
+
+@keyframes navLinkDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
 }
 
 @import 'project';

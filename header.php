@@ -14,4 +14,4 @@ get_template_part('template-parts/head');
 // Variables for modifyin html based on which header is being used
 $header_type = 'default';
 set_query_var('header_type', $header_type);
-get_template_part('template-parts/content-header');
+get_template_part('template-parts/content-header-alt');

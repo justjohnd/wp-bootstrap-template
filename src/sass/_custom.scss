@@ -8,6 +8,8 @@ $h5-font-size: $font-size-base * 2.5;
 
 // Define color variables, then add them to the $theme-colors map; You can add custom colors as well
 $primary: #fe9100;
+$black: #000;
+
 
 $theme-colors: (
   // 'primary': $primary,
@@ -18,5 +20,72 @@ $theme-colors: (
   // 'danger': $danger,
   // 'light': $light,
   // 'dark': $dark,
-  'custom': rgb(85, 167, 37)
+  'black': $black
 );
+
+//CSS class modifications
+//Buttons
+.btn {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn.rounded-right {
+  border-radius: 0;
+  @extend .rounded-right;
+}
+
+.container {
+  // Sets default y-axis margin for containers
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+//Navbar
+.navbar .container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.nav-link {
+  padding: 0.25em 1em;
+}
+
+.navbar-collapse {
+  margin-top: 14px; //Only use this to manually vertically align navbar to the logo 
+}
+
+//These styles will automatically adjust all image sizes to fit the carousel, regardless of different heights
+.carousel-item img {
+  width: 100%;
+  object-fit: cover;
+  width: auto;
+  max-height: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .carousel-item img {
+    width: 100%;
+  }
+}
+
+//Jumbotron
+.jumbotron {
+  margin-bottom: 0;
+  max-height: 100%;
+}
+
+//Forms
+//Make input height same as button
+.form-outline .form-control {
+  font-size: 0.75em;
+  border-radius: unset;
+}
+
+@media screen and (min-width: 576px) {
+  .form-outline .form-control {
+    height: unset;
+  }
+}
