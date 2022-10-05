@@ -133,7 +133,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .cat-item a:hover {
-  @extend .btn-primary:hover;
+  @extend .btn-primary, :hover;
 }
 
 //Navigationals for pagination

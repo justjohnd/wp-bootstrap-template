@@ -1,6 +1,5 @@
 import { src, dest, watch, series, parallel } from 'gulp';
 import yargs from 'yargs';
-import sass from 'gulp-sass';
 import cleanCss from 'gulp-clean-css';
 import gulpif from 'gulp-if';
 import postcss from 'gulp-postcss';
@@ -15,6 +14,8 @@ import zip from 'gulp-zip';
 import replace from 'gulp-replace';
 import wpPot from 'gulp-wp-pot';
 import info from './package.json';
+
+const sass = require('gulp-sass')(require('sass'));
 const PRODUCTION = yargs.argv.prod;
 
 // Compile css
